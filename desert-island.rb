@@ -30,7 +30,7 @@ class Block1
         if answer == 2 || answer == 3 || answer == 4
             end_story(answer)
         elsif answer == 1
-            puts story_pt2= Block2.new("Head up hill looking for water.","Head down hill looking for water.","Keep crashing through the brush hoping you stumble across something.","Give up and drink ocean water.")
+            story_pt2= Block2.new("Head up hill looking for water.","Head down hill looking for water.","Keep crashing through the brush hoping you stumble across something.","Give up and drink ocean water.")
             puts story_pt2.get_story
             puts story_pt2.get_choices
         else
@@ -65,11 +65,11 @@ class Block2<Block1
         if answer == 4
             end_story (answer)
         elsif answer == 1 || answer == 2
-          puts story_pt3= Block3.new("You think you saw some coconuts back the way you came...","You thought there was a nice grove of palm trees you could turn into a shelter, let’s go back there...","You saw some animal tracks! Let’s see where they lead...","Dig yourself a grave - there’s no way you’re getting out of this alive...")
-          puts story_pt3.get_story
-          puts story_pt3.get_choices
+            story_pt3= Block3.new("You think you saw some coconuts back the way you came...","You thought there was a nice grove of palm trees you could turn into a shelter, let’s go back there...","You saw some animal tracks! Let’s see where they lead...","Dig yourself a grave - there’s no way you’re getting out of this alive...")
+            puts story_pt3.get_story
+            puts story_pt3.get_choices
         elsif answer == 3
-            puts story_pt4= Block4.new("Run away.","Raise your fists to fight them off.","Use your powers of persuasion and charm.","Surrender to the fact you know you’ll be a mighty tasty soup.")
+            story_pt4= Block4.new("Run away.","Raise your fists to fight them off.","Use your powers of persuasion and charm.","Surrender to the fact you know you’ll be a mighty tasty soup.")
             puts story_pt4.get_story
             puts story_pt4.get_choices
         else
@@ -104,7 +104,7 @@ class Block3<Block1
         if answer == 4
             end_story (answer)
         elsif answer == 1 || answer == 2 || answer == 3
-            puts story_pt4= Block4.new("Run away.","Raise your fists to fight them off.","Use your powers of persuasion and charm.","Surrender to the fact you know you’ll be a mighty tasty soup.")
+            story_pt4= Block4.new("Run away.","Raise your fists to fight them off.","Use your powers of persuasion and charm.","Surrender to the fact you know you’ll be a mighty tasty soup.")
             puts story_pt4.get_story
             puts story_pt4.get_choices
         else
@@ -141,7 +141,7 @@ class Block4<Block1
         if answer == 1 || answer == 2 || answer == 4
             end_story (answer)
         elsif answer == 3
-          puts story_pt5= Block5.new("Baby Shark","Eye of the Tiger","Danny Boy","The GREATEST song ever written")
+          story_pt5= Block5.new("Baby Shark","Eye of the Tiger","Danny Boy","The GREATEST song ever written")
           puts story_pt5.get_story
           puts story_pt5.get_choices
         else
@@ -176,7 +176,7 @@ class Block5<Block1
         if answer == 3
             end_story (answer)
         elsif answer == 1 || answer == 2
-            puts story_pt6= Block6.new("This is your chance - Kill everyone!","This is your chance - Run away!!!","Sing LOUDER!","Realize their singing along is actually them mocking you... and stop singing.")
+            story_pt6= Block6.new("This is your chance - Kill everyone!","This is your chance - Run away!!!","Sing LOUDER!","Realize their singing along is actually them mocking you... and stop singing.")
             puts story_pt6.get_story
             puts story_pt6.get_choices
         elsif answer == 4
