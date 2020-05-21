@@ -12,7 +12,7 @@ class Block1
         puts @story
     end
 
-    
+
     def end_story (answer)
         endings = {
             2 => "-- You attempt to make a net out of your clothes and go fishing for food. \n -- This does not work out well... \n -- A shark appears and bites off your leg. \n -- You can't swim away fast enough... \n -- You die.",
@@ -23,7 +23,7 @@ class Block1
         puts "\nTRY AGAIN\n -------------"
         get_choices
     end
-    
+
     def get_choices
         puts [@choice1, @choice2, @choice3, @choice4]
         answer = gets.chomp.to_i
@@ -65,9 +65,13 @@ class Block2<Block1
         if answer == 4
             end_story (answer)
         elsif answer == 1 || answer == 2
-            puts "you find water -> Block3"
+          puts story_pt3= Block3.new("Find coconuts.","find shelter.","follow animal tracks.","dig yourself a grave.")
+          puts story_pt3.get_story
+          puts story_pt3.get_choices
         elsif answer == 3
-            puts "find the cannibals -> Block4"
+            puts story_pt4= Block4.new("run away.","fight.","powers of persuasion.","become soup.")
+            puts story_pt4.get_story
+            puts story_pt4.get_choices
         else
             puts "Pick a number between 1-4"
             puts get_choices
@@ -75,6 +79,151 @@ class Block2<Block1
     end
 end
 
+class Block3<Block1
+    def initialize(choice1, choice2, choice3, choice4)
+        super(choice1, choice2, choice3, choice4)
+    end
+
+    def get_story
+        @story = "-- story 3 - you find a stream now what..."
+    end
+
+    def end_story(answer)
+        endings = {
+            4 => "-- Die - dig yourself a grave"
+        }
+        puts endings[answer]
+        puts "\nTRY AGAIN\n -------------"
+        get_story
+        get_choices
+    end
+
+    def get_choices
+        puts [@choice1, @choice2, @choice3, @choice4]
+        answer = gets.chomp.to_i
+        if answer == 4
+            end_story (answer)
+        elsif answer == 1 || answer == 2 || answer == 3
+            puts story_pt4= Block4.new("run away.","fight.","powers of persuasion.","become soup.")
+            puts story_pt4.get_story
+            puts story_pt4.get_choices
+        else
+            puts "Pick a number between 1-4"
+            puts get_choices
+        end
+    end
+end
+
+class Block4<Block1
+    def initialize(choice1, choice2, choice3, choice4)
+        super(choice1, choice2, choice3, choice4)
+    end
+
+    def get_story
+        @story = "-- story 4 - you find a canibal village now what..."
+    end
+
+    def end_story(answer)
+        endings = {
+            1 => "-- Die - trip on rock as you run away and get eaten",
+            2 => "-- Die - they have spears you dont. dummy.",
+            4 => "-- Die - you are eaten by cannibals"
+        }
+        puts endings[answer]
+        puts "\nTRY AGAIN\n -------------"
+        get_story
+        get_choices
+    end
+
+    def get_choices
+        puts [@choice1, @choice2, @choice3, @choice4]
+        answer = gets.chomp.to_i
+        if answer == 1 || answer == 2 || answer == 4
+            end_story (answer)
+        elsif answer == 3
+          puts story_pt5= Block5.new("baby shark.","swaetin bullets.","danny boy.","the greatest song ever written.")
+          puts story_pt5.get_story
+          puts story_pt5.get_choices
+        else
+            puts "Pick a number between 1-4"
+            puts get_choices
+        end
+    end
+end
+
+class Block5<Block1
+    def initialize(choice1, choice2, choice3, choice4)
+        super(choice1, choice2, choice3, choice4)
+    end
+
+    def get_story
+        @story = "-- story 5 - you sing to the cannibals..."
+    end
+
+    def end_story(answer)
+        endings = {
+            3 => "-- Die - you depressed cannibals with your ugly sad song"
+        }
+        puts endings[answer]
+        puts "\nTRY AGAIN\n -------------"
+        get_story
+        get_choices
+    end
+
+    def get_choices
+        puts [@choice1, @choice2, @choice3, @choice4]
+        answer = gets.chomp.to_i
+        if answer == 3
+            end_story (answer)
+        elsif answer == 1 || answer == 2
+            puts story_pt6= Block6.new("kill everyone.","run away.","sing louder.","think they're mocking you.")
+            puts story_pt6.get_story
+            puts story_pt6.get_choices
+        elsif answer == 4
+            puts "rick roll -> become cannibal king - winning text"
+            puts get_choices
+        else
+          puts "Pick a number between 1-4"
+          puts get_choices
+        end
+    end
+end
+
+class Block6<Block1
+    def initialize(choice1, choice2, choice3, choice4)
+        super(choice1, choice2, choice3, choice4)
+    end
+
+    def get_story
+        @story = "-- story 6 - music sooths the soul, escaper becomes king..."
+    end
+
+    def end_story(answer)
+        endings = {
+            1 => "-- Die - try to kill them all but they see you, dummy",
+            4 => "-- Die - they werent mocking your music and are mad that you stopped singing"
+        }
+        puts endings[answer]
+        puts "\nTRY AGAIN\n -------------"
+        get_story
+        get_choices
+    end
+
+    def get_choices
+        puts [@choice1, @choice2, @choice3, @choice4]
+        answer = gets.chomp.to_i
+        if answer == 1 || answer == 4
+            end_story (answer)
+        elsif answer == 2
+            puts "run away and escape to helicopter ->winning text"
+        elsif answer == 3
+            puts "singing louder become cannibal king -> winning text"
+        else
+          puts "Pick a number between 1-4"
+          puts get_choices
+        end
+    end
+end
 
 
 
